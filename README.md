@@ -7,6 +7,6 @@ It requires ELK's output files (GEOMETRY.OUT, INFO.OUT) and provides a GEOMETRY.
 
       gfortran magnetic_structure.f90 -o mag_struct
 
-To execute:
+**To execute:**
 
       ./mag_struct
