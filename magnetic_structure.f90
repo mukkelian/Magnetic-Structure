@@ -1,7 +1,7 @@
-!    <Code magnetic_structure can be used to plot the magentic structure of
+!    Code magnetic_structure can be used to plot the magentic structure of
 !    of a given magnetic material and works only for the calculations done
-!    by ELK <https://elk.sourceforge.io/>>
-!    Copyright (C) <2024>  <Mukesh Kumar Sharma>
+!    by ELK (https://elk.sourceforge.io/)
+!    Copyright (C) 2024,  Mukesh Kumar Sharma
 
 !    This program is free software: you can redistribute it and/or modify
 !    it under the terms of the GNU Affero General Public License as published
