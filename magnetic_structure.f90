@@ -1,3 +1,21 @@
+!    <Code magnetic_structure can be used to plot the magentic structure of
+!    of a given magnetic material and works only for the calculations done
+!    by ELK <https://elk.sourceforge.io/>>
+!    Copyright (C) <2024>  <Mukesh Kumar Sharma>
+
+!    This program is free software: you can redistribute it and/or modify
+!    it under the terms of the GNU Affero General Public License as published
+!    by the Free Software Foundation, either version 3 of the License, or
+!    any later version.
+
+!    This program is distributed in the hope that it will be useful,
+!    but WITHOUT ANY WARRANTY; without even the implied warranty of
+!    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+!    GNU Affero General Public License for more details.
+
+!    You should have received a copy of the GNU Affero General Public License
+!    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
 program magnetic_structure
 	implicit none
 	character(len=256) :: line, search_string, dummy_string, &
@@ -148,4 +166,5 @@ program magnetic_structure
 	close(unit_number)
         print*, "OUTPUT: 'GEOMETRY.xsf'"
         print*,''
+
 end program magnetic_structure
