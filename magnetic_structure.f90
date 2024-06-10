@@ -1,8 +1,8 @@
 !    Code magnetic_structure can be used to plot the magentic structure of
 !    of a given magnetic material and works only for the calculations done
 !    by ELK (https://elk.sourceforge.io/)
-!    Copyright (C) 2024, Mukesh Kumar Sharma
-
+!    Copyright (C) 2024, Mukesh Kumar Sharma, e-mail: mukelian92@gmail.com
+!
 !    This program is free software: you can redistribute it and/or modify
 !    it under the terms of the GNU Affero General Public License as published
 !    by the Free Software Foundation, either version 3 of the License, or
@@ -39,7 +39,7 @@ program magnetic_structure
 	print*, "Reading 'INFO.OUT' file"
 	
 	open(unit=unit_number, file="INFO.OUT", status="old", action="read")
-	print*, "Finding moment informations in 'INFO.OUT'"
+	print*, "Finding magnetic moment informations in 'INFO.OUT'"
 	
 	do
 		read(unit_number, '(A)', iostat=iostat) line
