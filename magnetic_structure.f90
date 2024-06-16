@@ -27,6 +27,8 @@ program magnetic_structure
 		tot_atom, i, j, K, tot_words, word_present
 	real :: vector(3, 3), position_momentum(200, 6)
 	real, allocatable :: ith_species(:)
+	
+	logical :: found_moment = .FALSE.
 
 	position_momentum = 0
 	search_string = "Moments :"
@@ -55,14 +57,16 @@ program magnetic_structure
 		print*, 'Done!'
 		print*, ''
 		print *, "Final moment information found at line:", last_occurrence
+		found_moment = .TRUE.
 	else
+		print*, ''
 		print *, "Moment information not found"
-		print*, 'STOPPING now'
-		stop
+		print*, 'Generating only crystal file (*.xsf)'
 	end if
+
+!	reading GEOMETRY.OUT started	########################
         print*, ''
 	print*, "Reading 'GEOMETRY.OUT' file"
-!	reading GEOMETRY.OUT started	########################
 	open(unit=unit_number+1, file="GEOMETRY.OUT", status="old", action="read")
 	do line_number = 1, 14
 		read(unit_number+1, '(A)') line
@@ -99,6 +103,7 @@ program magnetic_structure
 !	reading GEOMETRY.OUT completed	########################
     
 !	Searching moment data in INFO.OUT
+	if(found_moment) then
 	open(unit=unit_number, file="INFO.OUT", status="old", action="read")
 	do line_number = 1, last_occurrence + 2
 		read(unit_number, '(A)') line
@@ -141,6 +146,7 @@ program magnetic_structure
 	end do
 
 	close(unit_number)
+	end if
 !	Searching completed
 
 	open(unit=unit_number, file="GEOMETRY.xsf", status="unknown", action="write")
